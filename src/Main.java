@@ -1,8 +1,11 @@
+import boardGame.Board;
 import boardGame.Position;
+import chess.ChessMatch;
 
 public class Main {
     public static void main(String[] args) {
-        Position o = new Position(5, 3);
-        System.out.println(o.toString());
+
+       ChessMatch chessMath = new ChessMatch();
+        UI.printBoard(chessMath.getPieces());
     }
 }
