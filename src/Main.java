@@ -28,8 +28,7 @@ public class Main {
 
                 ChessPiece capturePiece = chessMath.performChessMove(source, target);
 
-            }
-            catch(ChessException | InputMismatchException e){
+            } catch (ChessException | InputMismatchException e) {
                 System.out.println(e.getMessage());
                 sc.nextLine();
 
