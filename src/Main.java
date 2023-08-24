@@ -1,5 +1,3 @@
-import boardGame.Board;
-import boardGame.Position;
 import chess.ChessException;
 import chess.ChessMatch;
 import chess.ChessPiece;
@@ -19,11 +17,16 @@ public class Main {
                 UI.clearScreen();
                 UI.printBoard(chessMath.getPieces());
                 System.out.println();
-                System.out.println("Source: ");
+                System.out.print("Source: ");
                 ChessPosition source = UI.readChessPostion(sc);
 
+                boolean[][] possibleMoves = chessMath.possibleMoves(source);
+                UI.clearScreen();
+                UI.printBoard(chessMath.getPieces(), possibleMoves);
+
+
                 System.out.println();
-                System.out.println("Target: ");
+                System.out.print("Target: ");
                 ChessPosition target = UI.readChessPostion(sc);
 
                 ChessPiece capturePiece = chessMath.performChessMove(source, target);
@@ -34,6 +37,5 @@ public class Main {
 
             }
         }
-
     }
 }
